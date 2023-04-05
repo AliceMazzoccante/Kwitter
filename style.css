@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+    background-color: rgb(164, 92, 236);
+    overflow: hidden;
+}
+
+.header, .form-group {
+    margin: 20px;
+}
+
+.divContent {
+    background-color: #d6a7f1;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.logo {
+    width: 30%;
+}
+
+#trending {
+    margin-top: 30px;
+}
+
+.nomeSala {
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.nomeSala:hover {
+    background-color: antiquewhite;
+}
+

@@ -1,0 +1,37 @@
+// ADICIONE SUS LINKS FIREBASE AQUI
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+document.getElementById("nomeUsuario").innerHTML = "Olá, " + nomeUsuario + "!";
+
+getData();
+
+function addSala() {
+  const sala = document.getElementById("nomeSala").value;
+
+  firebase.database().ref("/").child(sala).set({
+    purpose: "sala criada",
+  });
+
+  localStorage.setItem("nomeSala", sala);
+
+  // location = "chat.html"
+}
+
+function getData() {
+  firebase
+    .database()
+    .ref("/")
+    .on("value", function (snapshot) {
+      document.getElementById("output").innerHTML = "";
+      console.log("Keys Changed");
+      snapshot.forEach(function(childSnapshot) {
+        const childKey = childSnapshot.key;
+        console.log(childKey);
+      });
+    });
+}
